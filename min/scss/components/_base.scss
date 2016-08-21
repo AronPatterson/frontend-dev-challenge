@@ -255,6 +255,25 @@ button {
 	}
 }
 
+
+// for newsletter submission field in footer
+.newsWrapper {
+	width: 100%;
+	input {
+		display: inline-block;
+		width: 280px;
+	}
+	button {
+		display: inline-block;
+		width: 74px;
+		margin: 0;
+		height: rem-calc(9);
+		padding: $fieldset-padding;
+	}
+
+}
+
+
 // Back to Top
 .backToTopBtn {
 	display: inline-block;
