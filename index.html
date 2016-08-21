@@ -46,11 +46,7 @@
 			<div class="title-bar-title">Navigation</div>
 		</div>
 		<ul id="mainNav" class="menu expanded large-horizontal medium-vertical" data-responsive-menu="accordion large-dropdown medium-accordion">
-			<li><a href="#" data-toggle="giantMenu">Who We Are</a>
-				<!--<ul class="menu">
-					<li>Lorem ipsum dolor</li>
-				</ul>-->
-			</li>
+			<li><a href="#" data-toggle="giantMenu">Who We Are</a></li>
 			<li><a href="#">What We Do</a></li>
 			<li><a href="#">Our Work</a></li>
 			<li><a href="#">Our Blog</a></li>
@@ -62,8 +58,8 @@
 	</div>
 </div> <!-- .row -->
 	<!-- END: /Nav -->
-<div id="giantMenu" data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true; vOffset: 20" class="dropdown-pane show-for-large" style="position: absolute; z-index:999;">
-	<div class="large-3 columns">
+<div id="giantMenu" data-dropdown data-options="closeOnClick: true; hover: true; hoverPane: true; vOffset: 20;" class="dropdown-pane" style="position: absolute; z-index:999;">
+	<div class="medium-16 large-3 columns">
 		<ul class="menu vertical">
 			<li><label>Section Name</label></li>
 			<li><a href="#">Dropdown Options</a></li>
@@ -76,7 +72,7 @@
 			<li class="divider"></li>
 		</ul>
 	</div>
-	<div class="large-3 columns">
+	<div class="medium-16 large-3 columns">
 		<ul class="menu vertical">
 			<li><label>Section Name</label></li>
 			<li><a href="#">Dropdown Option</a></li>
@@ -86,8 +82,8 @@
 			<li><a href="#">See all ?</a></li>
 		</ul>
 	</div>
-	<div class="large-3 columns">
-		<ul class="menu vertical align-self-top">
+	<div class="medium-16 large-3 columns">
+		<ul class="menu vertical">
 			<li><label>Section Name</label></li>
 			<li><a href="#">Dropdown Option</a></li>
 			<li><a href="#">Dropdown Option</a></li>
@@ -96,7 +92,7 @@
 			<li><a href="#">See all ?</a></li>
 		</ul>
 	</div>
-	<div class="large-7 columns align-self-top">
+	<div class="hide-for-medium large-7 columns">
 		<p>DIY offal vice cliche celiac try-hard, chambray fingerstache 90's microdosing kitsch austin actually ennui. Mumblecore lumbersexual thundercats stumptown, listicle celiac trust fund flexitarian migas. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun, tilde man braid bitters lumbersexual microdosing plaid messenger bag. Fanny pack forage selvage marfa put a bird on it, leggings narwhal YOLO. +1 asymmetrical butcher aesthetic. Cardigan ugh 3 wolf moon put a bird on it, thundercats narwhal kombucha fap disrupt kogi chillwave dreamcatcher paleo lumbersexual.</p>
 		<p>Wayfarers four loko franzen dreamcatcher, shoreditch flannel cold-pressed blog man bun kogi truffaut selvage. Lo-fi plaid small batch, williamsburg organic portland ramps yr vegan cred +1 fixie 3 wolf moon. Forage tacos iPhone, mlkshk affogato yr kale chips pickled. Lumbersexual small batch austin intelligentsia waistcoat single-origin coffee. Gluten-free banjo waistcoat, shabby chic meggings kogi roof party irony lumbersexual butcher quinoa 8-bit messenger bag keytar. Williamsburg XOXO heirloom, leggings mumblecore yr banh mi wolf forage try-hard austin pitchfork drinking vinegar. Shabby chic raw denim selfies thundercats master cleanse slow-carb.</p>
 	</div>
@@ -120,16 +116,29 @@
 <!-- START: Main Content -->
 <div id="mainContent">
 	<div id="contentBox" class="row" role="main">
-	<div id="ctaLarge" class="small-up-1 medium-up-2">
-		<script id="ctaTemplate" type="text/x-jquery-tmpl">
-			<div class="column #${callouts.color}" style="background-image: url('#${callouts.imagePath}');">#${callouts.title}</div>
-		</script>
-	</div>
-		<div id="ctaSmall" class="small-up-1 medium-up-3">
-			<div class="column">aa</div>
-			<div class="column">aa</div>
-			<div class="column">aa</div>
-		</div>
+	<div id="ctaLarge" class="small-up-1 medium-up-2"></div>
+	<div id="ctaSmall" class="small-up-1 medium-up-3"></div>
+	<script id="ctaLargeTemplate" type="text/x-handlebars-template">
+		{{#callouts}}
+			{{#if buttonLabel}}
+			<div class="column" style="background: url('{{imagePath}}') center center;">
+				<div class="ctaTitle">{{title}}</div>
+				<div class="ctaLabel {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{buttonLabel}}</div>
+				{{!-- the above pulls in a color as the class 'colorCTA'; if there's no color, it defaults to greenCTA --}}
+			</div>
+			{{/if}}
+		{{/callouts}}
+	</script>
+	<script id="ctaSmallTemplate" type="text/x-handlebars-template">
+		{{!-- this pulls all that don't have a buttonLabel, which neatly works out to our last 3... this is totally a cheat, alas, project reqs!!! --}}
+		{{#callouts}}
+			{{#unless buttonLabel}}
+			<div class="column" style="background: url('{{imagePath}}') center center;">
+				<div class="ctaTitle">{{title}}</div>
+			</div>
+			{{/unless}}
+		{{/callouts}}
+	</script>
 	</div>
 </div>
 <!-- END: /Main Content -->
@@ -173,6 +182,8 @@
 				</ul>
 			</div>
 		</div>
+	</div> <!-- .row -->
+	<div class="row">
 		<div class="small-16 text-center">
 			<p class="text-center">
 				<a href="tel:9528519400">952-851-9400</a><br />
@@ -185,10 +196,57 @@
 <!-- END: /Site Footer -->
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+var theData = {
+  "callouts": [
+    {
+      "title":"Callout One", 
+      "buttonLabel":"Click Me",
+      "imagePath":"img/body_cta-1.jpg",
+      "color":"yellow"
+    },
+    {
+      "title":"Callout Two", 
+      "buttonLabel":"Click This",
+      "imagePath":"img/body_cta-2.jpg",
+      "color":"red"
+    },
+    {
+      "title":"Callout Three", 
+      "buttonLabel":"",
+      "imagePath":"img/body_cta-3.jpg",
+      "color":"green"
+    },
+    {
+      "title":"Callout Four", 
+      "buttonLabel":"",
+      "imagePath":"img/body_cta-4.jpg",
+      "color":"green"
+    },    
+    {
+      "title":"Callout Five", 
+      "buttonLabel":"",
+      "imagePath":"img/body_cta-5.jpg",
+      "color":"green"
+    }
+  ]
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script type="text/javascript" src="js/app.min.js"></script>
 <script>
 $(document).ready(function(){
 	console.log('Foundation Core Version: ' + Foundation.version);
+
+	var templateScriptLg = $('#ctaLargeTemplate').html();
+	var theTemplateLg = Handlebars.compile(templateScriptLg);
+	$('#ctaLarge').append(theTemplateLg(theData));
+
+	var templateScriptSm = $('#ctaSmallTemplate').html();
+	var theTemplateSm = Handlebars.compile(templateScriptSm);
+	$('#ctaSmall').append(theTemplateSm(theData));
+    
 });
 </script>
 </body>
