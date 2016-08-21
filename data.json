@@ -3,31 +3,31 @@
     {
       "title":"Callout One", 
       "buttonLabel":"Click Me",
-      "imagePath":"/assets/img/image-1.jpg",
+      "imagePath":"/img/body_cta-1.jpg",
       "color":"yellow"
     },
     {
       "title":"Callout Two", 
       "buttonLabel":"Click This",
-      "imagePath":"/assets/img/image-2.jpg",
+      "imagePath":"/img/body_cta-1.jpg",
       "color":"red"
     },
     {
       "title":"Callout Three", 
       "buttonLabel":"",
-      "imagePath":"/assets/img/image-3.jpg",
+      "imagePath":"/img/body_cta-1.jpg",
       "color":"green"
     },
     {
       "title":"Callout Four", 
       "buttonLabel":"",
-      "imagePath":"/assets/img/image-4.jpg",
+      "imagePath":"/img/body_cta-1.jpg",
       "color":"green"
     },    
     {
       "title":"Callout Five", 
       "buttonLabel":"",
-      "imagePath":"/assets/img/image-5.jpg",
+      "imagePath":"/img/body_cta-1.jpg",
       "color":"green"
     }
   ]

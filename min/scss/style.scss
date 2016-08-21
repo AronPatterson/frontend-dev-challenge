@@ -14,9 +14,9 @@ Author URI: http://www.aroonline.com
 @import 'siteSettings'; // Custom site settings (overwrites default Foundation styling)
 
 @include foundation-global-styles;
-//@include foundation-grid; // We're using flex grid to speed up the building, and because flex grid is soooo much cooler
-@include foundation-flex-grid;
-@include foundation-flex-classes;
+@include foundation-grid; // We're using flex grid to speed up the building, and because flex grid is soooo much cooler
+//@include foundation-flex-grid;
+//@include foundation-flex-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;

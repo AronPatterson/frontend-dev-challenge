@@ -179,37 +179,43 @@ button {
 
 /*/ HEADER /*/
 #navContainer {
+	background: $body-nav-bg;
 	display: block;
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
 }
 
+/*/ NAV /*/
 #mainNav {
+	text-align: center;
 	li {
 		@include breakpoint(large) {
+			height: 54px;
 			a {
 				padding: 0;
 				font-family: $header-font-family;
-				font-size: 38px;
+				font-size: 16px;
 				color: $body-font-color;
+				border-bottom: 1px solid $robin-egg-blue;
 				@include breakpoint(large down) {
-					font-size: 32px;
-				}
-				&::before {
-					content: "";
-					background-color: $body-font-color;
-					width: 12px;
-					height: 32px;
-					margin-left: 16px;
-					margin-right: 10px;
-					@include breakpoint(large down) {
-						height: 28px;
-					}
+					
 				}
 				&:hover {
-					color: $robin-egg-blue;
-					background-color: $robin-egg-blue;
+					border-bottom: 1px solid transparent;
+					color: scale-color($body-font-color, $lightness: 10%);
+				}
+			}
+		}
+		@include breakpoint(medium down) {
+			a {
+				background-color: $body-nav-bg;
+				justify-content: center;
+				font-family: $header-font-family;
+				border-top: 1px solid #555;
+				&:hover {
+					background-color: scale-color($medium-gray, $lightness: -20%);
+					color: $white;
 				}
 			}
 		}
@@ -217,7 +223,7 @@ button {
 }
 
 /*/ MODULES /*/
-
+// this would normally be plugins vital to the layout
 
 /*/ FOOTER /*/
 // Footer area content
@@ -227,14 +233,14 @@ button {
 	z-index: 1;
 	width: 100%;
 	padding-top: 2%;
-	font-size: 20px;
+	font-size: 16px;
 	font-family: $header-font-family;
 	color: $white;
 	background: $body-footer-bg;
 	p {
 		margin-top: 20px;
 		font-family: $body-font-family;
-		font-size: 14px;
+		font-size: 16px;
 		font-weight: bold;
 		font-color: $white;
 	}

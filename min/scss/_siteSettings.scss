@@ -9,8 +9,8 @@
 @import 'bower_components/foundation-sites/scss/util/util';
 
 // STRUCTURE OPTIONS //
-$aron-box-mode: 0px; // set a 1px border on everything, so you can see the outlines of the elements
-$global-flexbox: true;
+$aron-box-mode: 1px; // set a 1px border on everything, so you can see the outlines of the elements
+$global-flexbox: false;
 
 $global-width: 1280px;
 $global-font-size: 100%;
@@ -219,7 +219,7 @@ $button-opacity-disabled: 0.25;
 // ----
 $dropdown-padding: 1rem;
 $dropdown-border: 1px solid $medium-gray;
-$dropdown-font-size: 16rem;
+$dropdown-font-size: rem-calc(12);
 $dropdown-width: 300px;
 $dropdown-radius: $global-radius;
 $dropdown-sizes: (

@@ -11,7 +11,6 @@
 		display: block;
 	}
 	.menu a {
-		width: 100%!important;
 		display: inline-block!important;
 		@include breakpoint(medium down) {
 			display: block!important;
@@ -41,22 +40,6 @@
 		}
 		@include breakpoint(medium down) {
 			display: block;
-		}
-	}
-	#mainNav {
-		@include breakpoint(medium down) {
-			a {
-				background-color: $body-nav-bg;
-				justify-content: center;
-				font-family: $header-font-family;
-				font-size: 30px;
-				border-top: 1px solid #555;
-				color: $white;
-				&:hover {
-					background-color: scale-color($medium-gray, $lightness: -20%);
-					color: $white;
-				}
-			}
 		}
 	}
 }
@@ -135,19 +118,19 @@
 
 /*/ SOCIAL MEDIA ICONS /*/
 #socialMedia {
-	margin-top: 20px;
 	ul {
 		list-style-type: none;
 		margin-bottom: 0;
+		margin-left: 0;
 		li {
 			display: inline-block;
 			background-color: $secondary-color;
-			width: 54px;
-			height: 54px;
+			width: 35px;
+			height: 35px;
 			margin-right: 10px;
 			margin-bottom: 10px;
 			padding-top: 6px;
-			border-radius: 6px;
+			border-radius: 1000px;
 			text-align: center;
 			border: 1px solid rgba($secondary-color,.3);
 			transition: box-shadow .1s;
