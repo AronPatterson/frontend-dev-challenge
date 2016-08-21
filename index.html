@@ -11,7 +11,7 @@
 	<script>
 	WebFont.load({
 		google: {
-			families: ['Lato:normal,bold']
+			families: ['Lato:normal,bold,black']
 		}
 	});
 	</script>
@@ -29,17 +29,17 @@
 <div id="top">
 <header id="navContainer">
 	<div class="row medium-uncollapse large-collapse relative">
-		<section class="small-18 large-9 columns medium-text-center large-text-left logoArea">
+		<section class="small-12 large-9 columns medium-text-center large-text-left logoArea">
 			<a href="#"><h1><img src="img/logo.svg" alt="August Ash - Minneapolis, Minnesota"></h1></a>
 		</section>
-		<section class="small-18 large-9 columns medium-text-center large-text-right">
-			<input type="submit" class="button" />
+		<section class="small-6 large-9 columns">
+			<input type="submit" class="button float-right" />
 		</section>
 		<a class="sr-only" href="#mainContent">Skip to main content</a>
 	</div>
 </header>
 <!-- START: Nav -->
-<div class="row medium-uncollapse large-collapse">
+<div class="row collapse">
 	<nav class="small-18 large-9 columns">
 		<div class="title-bar" data-responsive-toggle="mainNav" data-hide-for="large">
 			<button class="menu-icon" type="button" data-toggle></button>
@@ -53,12 +53,14 @@
 			<li><a href="#">Careers</a></li>
 		</ul>
 	</nav>
-	<div class="small-18 large-9 columns">
-		<input type="text" />
+	<div id="searchBar" class="small-18 large-9 columns">
+		<div id="inputSearch">
+			<input type="text" /><button><i class="fa fa-search fa-lg"></i></button>
+		</div>
 	</div>
 </div> <!-- .row -->
 	<!-- END: /Nav -->
-<div id="giantMenu" data-dropdown data-options="closeOnClick: true; hover: true; hoverPane: true;" class="dropdown-pane" style="position: absolute; z-index:999;">
+<div id="giantMenu" data-dropdown data-options="closeOnClick: true; hover: true; hoverPane: true;" class="dropdown-pane" style="z-index:999;">
 	<div class="medium-18 large-4 columns">
 		<ul class="menu vertical">
 			<li><label>Section Name</label></li>
@@ -111,6 +113,12 @@
 			</li>
 		</ul>
 	</div>
+	<div class="slideshowTitle">
+		<span class="welcomeText">Welcome to our website.</span>
+	</div>
+	<div class="slideshowShopBtn">
+		<span class="button">Shop Now</span>
+	</div>
 </div>
 <!-- END: /Slideshow -->
 <!-- START: Main Content -->
@@ -122,9 +130,11 @@
 		{{#callouts}}
 			{{#if buttonLabel}}
 			<div class="small-18 medium-9 column">
-				<img src="{{imagePath}}" alt="{{title}}" />
-				<div class="ctaTitle">{{title}}</div>
-				<div class="ctaLabel {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{buttonLabel}}</div>
+				<a href="#">
+					<img src="{{imagePath}}" alt="{{title}}" />
+					<div class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</div>
+					<div class="ctaLabel {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{buttonLabel}}</div>
+				</a>
 				{{!-- the above pulls in a color as the class 'colorCTA'; if there's no color, it defaults to greenCTA --}}
 			</div>
 			{{/if}}
@@ -134,10 +144,12 @@
 		{{!-- this pulls all that don't have a buttonLabel, which neatly works out to our last 3... this is totally a cheat, alas, project reqs!!! --}}
 		{{#callouts}}
 			{{#unless buttonLabel}}
-			<div class="small-18 medium-6 column">
-				<img src="{{imagePath}}" alt="{{title}}" />
-				<div class="ctaTitle">{{title}}</div>
-			</div>
+			<a href="#">
+				<div class="small-18 medium-6 column">
+					<img src="{{imagePath}}" alt="{{title}}" />
+					<div class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</div>
+				</div>
+			</a>
 			{{/unless}}
 		{{/callouts}}
 	</script>

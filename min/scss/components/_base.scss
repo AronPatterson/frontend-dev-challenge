@@ -221,6 +221,37 @@ button {
 		}
 	}
 }
+#searchBar {
+	padding: 0 0 0 18px;
+	#inputSearch {
+		position: relative;
+		background: $white;
+		border-radius: $global-radius;
+		margin-top: 6px; /* margin-top + border-width */
+		margin-right: 6px; /* border-width */
+		input[type="text"] {
+			margin: 4px 0;
+			background: transparent;
+			height: auto;
+			box-shadow: none;
+			border: 0;
+		}
+		button {
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: block;
+			width: 40px;
+			height: 40px;
+			padding: 0;
+			border: none;
+			background: transparent;
+			color: #888;
+			line-height: 40px;
+		}
+	}
+}
+
 
 /*/ MODULES /*/
 // this would normally be plugins vital to the layout
@@ -232,26 +263,21 @@ button {
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	padding-top: 2%;
+	padding-top: 3%;
 	font-size: 16px;
 	font-family: $header-font-family;
 	color: $white;
 	background: $body-footer-bg;
 	p {
-		margin-top: 20px;
 		font-family: $body-font-family;
 		font-size: 16px;
-		font-weight: bold;
 		font-color: $white;
 	}
 	a {
 		color: $white;
-		font-weight: bold;
 		&:hover {
 			color: scale-color($white, $lightness: -20%);
 		}
-	}
-	.menu a {
 	}
 }
 

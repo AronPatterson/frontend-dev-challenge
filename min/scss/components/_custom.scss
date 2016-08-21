@@ -10,6 +10,11 @@
 	.accordion-menu li[role="menuitem"], .accordion-menu li[role="tab"] {
 		display: block;
 	}
+	.menu>li {
+		@include breakpoint(medium down) {
+			display: block!important;
+		}
+	}
 	.menu a {
 		display: inline-block!important;
 		@include breakpoint(medium down) {
@@ -45,6 +50,36 @@
 }
 
 
+/*/ SLIDESHOW /*/
+.slideshowTitle {
+	position: absolute;
+	display: inline-block;
+	padding: 20px;
+	width: 26%;
+	background-color: $white;
+	border-top: 4px solid $robin-egg-blue;
+	text-align: center;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-bottom-right-radius: $global-radius;
+	border-bottom-left-radius: $global-radius;
+	.welcomeText {
+		font-size: rem-calc(30);
+		font-weight: normal;
+	}
+}
+.slideshowShopBtn {
+	position: absolute;
+	display: inline-block;
+	left: 50%;
+	top: 56%;
+	transform: translate(-50%, -56%);
+	.button {
+		display: block;
+	}
+}
+
 /*/ CONTENT /*/
 // Main content area styles - these are the basics to save time on initial build, but can be deleted/recreated as needed
 #mainContent {
@@ -62,7 +97,7 @@
 	}
 	// Interior Pages
 	#contentBox {
-		min-height: 652px;
+		min-height: 450px;
 		margin-top: 6px;
 		padding: 26px 30px 0 30px;
 		background: $body-content-bg;
@@ -113,39 +148,68 @@
 
 
 /*/ EXTRA CONTENT STUFF /*/
-
 .ctaBox {
 	position: relative;
 	.column {
 		position: relative;
 		text-align: center;
+		overflow: hidden;
+		margin-bottom: 20px;
 		img {
 			width: 100%;
 			height: 100%;
-			transition: transform 1s ease-in-out;
+			transition: transform 1.5s ease-in-out;
 		}
-		&:hover {
-		//	img {
-		//		transform: translate(2,2);
-		//	}
+		&:hover img {
+			transform: scale(1.25);
 		}
 		.ctaTitle {
 			position: absolute;
 			display: inline-block;
 			padding: 20px;
+			width: 45%;
+			background-color: $white;
+			border-top: 4px solid;
 			text-align: center;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			font-size: rem-calc(20);
+			font-weight: 900;
+			border-bottom-right-radius: $global-radius;
+			border-bottom-left-radius: $global-radius;
+			&.redCTA {
+				border-top-color: $red;
+			}
+			&.yellowCTA {
+				border-top-color: $yellow;
+			}
+			&.greenCTA {
+				border-top-color: $neon-green;
+			}
 		}
 		.ctaLabel {
 			position: absolute;
-			top: 20%;
-			padding: 20px;
+			background-color: rgba($black, .6);
+			border: 4px solid $robin-egg-blue;
+			padding: 8px 30px;
+			color: $white;
 			text-align: center;
-			top: 70%;
+			top: 80%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			font-weight: 700;
+			border-radius: $global-radius;
+			transition: border-color .5s ease-in-out;
+			&.redCTA:hover {
+				border-color: $red;
+			}
+			&.yellowCTA:hover {
+				border-color: $yellow;
+			}
+			&.greenCTA:hover {
+				border-color: $neon-green;
+			}
 		}
 	}
 }
@@ -153,6 +217,10 @@
 
 /*/ SOCIAL MEDIA ICONS /*/
 #socialMedia {
+	h3 {
+		font-size: 18px;
+		color: $white;
+	}
 	ul {
 		list-style-type: none;
 		margin-bottom: 0;
