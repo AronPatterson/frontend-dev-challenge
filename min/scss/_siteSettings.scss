@@ -1,0 +1,354 @@
+//* THE VARIABLES *//
+// In this file, we store all of our changeable SCSS variables, as well as our font imports and certain mixins
+// These variables are free to be used within Foundation's _settings.scss as well.
+// AroOnline Responsive Template
+// Version: 2 (Down With the Quickness)
+// Foundation Version: 6.2.3
+
+// Sass utilities
+@import 'bower_components/foundation-sites/scss/util/util';
+
+// STRUCTURE OPTIONS //
+$aron-box-mode: 0px; // set a 1px border on everything, so you can see the outlines of the elements
+$global-flexbox: true;
+
+$global-width: 1280px;
+$global-font-size: 100%;
+$global-lineheight: 1.5;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-margin: 1rem;
+$global-radius: 4px;
+$global-namespace: true;
+$global-text-direction: ltr;
+$rem-base: 16px;
+
+// RESPONSIVE BREAKPOINTS
+$breakpoints: (
+	small: 0,
+	medium: 512px,
+	large: 1024px,
+	xlarge: 1400px,
+	xxlarge: 1600px
+);
+$breakpoint-classes: (small medium large xlarge xxlarge);
+
+// THE GRID
+$grid-row-width: $global-width;
+$grid-column-count: 16;
+$grid-column-gutter: (
+	small: 16px,
+	medium: 30px,
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+// COLORS
+// custom colors
+$robin-egg-blue: #43b3d8;
+$red: #ff384f;
+$yellow: #ffc702;
+$neon-green: #72e556;
+
+// generic colors
+$gray: #999;
+$light-gray: #e7e7e7; // content
+$medium-gray: #636363; // nav, footer
+$dark-gray: #2c2c2c; // text
+$black: #000;
+$white: #fff;
+
+$primary-color: $light-gray;
+$secondary-color: $robin-egg-blue;
+
+$foundation-palette: (
+	primary: $primary-color,
+	secondary: $robin-egg-blue,
+	success: #3adb76,
+	warning: #ffae00,
+	alert: #ec5840
+);
+
+// BODY
+$body-background: $primary-color;
+$body-font-color: $dark-gray;
+$body-font-family: "Lato", Arial, sans-serif;
+$body-antialiased: true;
+$body-content-bg: $body-background;
+$body-nav-bg: url('img/nav_bg.png') $dark-gray;
+$body-footer-bg: url('img/nav_bg.png') $dark-gray; // the image format allows the colors to match the tree colors
+
+// BASE TYPOGRAPHY
+// headers
+$header-font-family: $body-font-family;
+$header-font-weight: $global-weight-normal;
+$header-font-style: normal;
+$header-sizes: (
+	small: (
+		'h1': 30,
+		'h2': 26,
+		'h3': 24,
+		'h4': 20,
+		'h5': 17,
+		'h6': 16,
+	),
+	medium: (
+		'h1': 48,
+		'h2': 40,
+		'h3': 31,
+		'h4': 25,
+		'h5': 20,
+		'h6': 16,
+	),
+);
+$header-color: $body-font-color;
+$header-lineheight: 1.4;
+$header-margin-bottom: 0.5rem;
+$header-text-rendering: optimizeLegibility;
+$header-small-font-color: $body-font-color;
+
+// content
+$small-font-size: 80%;
+$paragraph-lineheight: 1.6;
+$paragraph-margin-bottom: 1rem;
+$paragraph-text-rendering: optimizeLegibility;
+$lead-font-size: $global-font-size * 1.25;
+$lead-lineheight: 1.6;
+$subheader-lineheight: 1.4;
+$subheader-color: $dark-gray;
+$subheader-font-weight: $global-weight-normal;
+$subheader-margin-top: 0.2rem;
+$subheader-margin-bottom: 0.5rem;
+$stat-font-size: 2.5rem;
+
+// links
+$anchor-color: $body-font-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: 14%);
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+
+// hr
+$hr-width: $global-width;
+$hr-border: 1px solid $medium-gray;
+$hr-margin: rem-calc(20) 0;
+
+// lists
+$list-lineheight: $paragraph-lineheight;
+$list-margin-bottom: $paragraph-margin-bottom;
+$list-style-type: disc;
+$list-style-position: outside;
+$list-side-margin: 1.25rem;
+$list-nested-side-margin: 1.25rem;
+
+// blockquotes
+$blockquote-color: $dark-gray;
+$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-border: 1px solid $medium-gray;
+
+// citations/abbrevs
+$cite-font-size: rem-calc(13);
+$cite-color: $dark-gray;
+$abbr-underline: 1px dotted $black;
+
+
+// FOUNDATION PLUG-INS
+
+// Title Bar
+// -----
+$titlebar-background: $body-nav-bg;
+$titlebar-color: $white;
+$titlebar-padding: 0.5rem;
+$titlebar-text-font-weight: bold;
+$titlebar-icon-color: $white;
+$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-spacing: 0.25rem;
+
+// Top Bar
+// -----
+$topbar-padding: 0.5rem;
+$topbar-background: $light-gray;
+$topbar-submenu-background: $topbar-background;
+$topbar-title-spacing: 1rem;
+$topbar-input-width: 200px;
+$topbar-unstack-breakpoint: medium;
+
+// Tabs
+// ----
+$tab-margin: 0;
+$tab-background: $white;
+$tab-background-active: $light-gray;
+$tab-item-font-size: rem-calc(12);
+$tab-item-background-hover: $white;
+$tab-item-padding: 1.25rem 1.5rem;
+$tab-expand-max: 6;
+$tab-content-background: $white;
+$tab-content-border: $light-gray;
+$tab-content-color: foreground($tab-background, $primary-color);
+$tab-content-padding: 1rem;
+
+// Breadcrumbs
+// ----
+$breadcrumbs-margin: 0 0 $global-margin 0;
+$breadcrumbs-item-font-size: rem-calc(11);
+$breadcrumbs-item-color: $primary-color;
+$breadcrumbs-item-color-current: $black;
+$breadcrumbs-item-color-disabled: $medium-gray;
+$breadcrumbs-item-margin: 0.75rem;
+$breadcrumbs-item-uppercase: true;
+$breadcrumbs-item-slash: true;
+
+// Button
+// ----
+$button-padding: 0.85em 1em;
+$button-margin: 0 0 $global-margin 0;
+$button-fill: solid;
+$button-background: $primary-color;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-color: $white;
+$button-color-alt: $black;
+$button-radius: $global-radius;
+$button-sizes: (
+	tiny: 0.6rem,
+	small: 0.75rem,
+	default: 0.9rem,
+	large: 1.25rem,
+);
+$button-opacity-disabled: 0.25;
+
+// Dropdown
+// ----
+$dropdown-padding: 1rem;
+$dropdown-border: 1px solid $medium-gray;
+$dropdown-font-size: 16rem;
+$dropdown-width: 300px;
+$dropdown-radius: $global-radius;
+$dropdown-sizes: (
+	tiny: 100px,
+	small: 200px,
+	large: 400px,
+);
+$dropdownmenu-arrows: true;
+$dropdown-arrow-color: $secondary-color;
+$dropdownmenu-min-width: 200px;
+$dropdownmenu-background: $primary-color;
+$dropdownmenu-border: 1px solid $medium-gray;
+
+// Callout
+// ----
+$callout-background: $white;
+$callout-background-fade: 85%;
+$callout-border: 1px solid rgba($black, 0.25);
+$callout-margin: 0 0 1rem 0;
+$callout-padding: 1rem;
+$callout-font-color: $body-font-color;
+$callout-font-color-alt: $body-background;
+$callout-radius: $global-radius;
+$callout-link-tint: 30%;
+
+// Forms
+// ----
+$fieldset-border: 1px solid $medium-gray;
+$fieldset-padding: rem-calc(20);
+$fieldset-margin: rem-calc(18 0);
+$legend-padding: rem-calc(0 3);
+$form-spacing: rem-calc(16);
+$helptext-color: $black;
+$helptext-font-size: rem-calc(13);
+$helptext-font-style: italic;
+$input-prefix-color: $black;
+$input-prefix-background: $light-gray;
+$input-prefix-border: 1px solid $medium-gray;
+$input-prefix-padding: 1rem;
+$form-label-color: $black;
+$form-label-font-size: rem-calc(14);
+$form-label-font-weight: $global-weight-normal;
+$form-label-line-height: 1.8;
+$select-background: $white;
+$select-triangle-color: $dark-gray;
+$select-radius: $global-radius;
+$input-color: $black;
+$input-placeholder-color: $medium-gray;
+$input-font-family: inherit;
+$input-font-size: rem-calc(16);
+$input-background: $white;
+$input-background-focus: $white;
+$input-background-disabled: $light-gray;
+$input-border: 1px solid $medium-gray;
+$input-border-focus: 1px solid $dark-gray;
+$input-shadow: inset 0 1px 2px rgba($black, 0.1);
+$input-shadow-focus: 0 0 5px $medium-gray;
+$input-cursor-disabled: default;
+$input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+$input-number-spinners: true;
+$input-radius: $global-radius;
+
+// Label
+// ----
+$label-background: $primary-color;
+$label-color: foreground($label-background);
+$label-font-size: 0.8rem;
+$label-padding: 0.33333rem 0.5rem;
+$label-radius: $global-radius;
+
+
+// Media Object
+// ----
+$mediaobject-margin-bottom: $global-margin;
+$mediaobject-section-padding: $global-padding;
+$mediaobject-image-width-stacked: 100%;
+
+// Menu
+// ----
+$menu-margin: 0;
+$menu-margin-nested: 1rem;
+$menu-item-padding: 0.7rem 1rem;
+$menu-item-color-active: $white;
+$menu-item-background-active: $primary-color;
+$menu-icon-spacing: 0.25rem;
+
+// Orbit
+// ----
+$orbit-bullet-background: $medium-gray;
+$orbit-bullet-background-active: $dark-gray;
+$orbit-bullet-diameter: 1.2rem;
+$orbit-bullet-margin: 0.1rem;
+$orbit-bullet-margin-top: 0.8rem;
+$orbit-bullet-margin-bottom: 0.8rem;
+$orbit-caption-background: rgba($black, 0.5);
+$orbit-caption-padding: 1rem;
+$orbit-control-background-hover: rgba($black, 0.5);
+$orbit-control-padding: 1rem;
+$orbit-control-zindex: 10;
+
+// Pagination
+// ----
+$pagination-font-size: rem-calc(14);
+$pagination-margin-bottom: $global-margin;
+$pagination-item-color: $black;
+$pagination-item-padding: rem-calc(3 10);
+$pagination-item-spacing: rem-calc(1);
+$pagination-radius: $global-radius;
+$pagination-item-background-hover: $light-gray;
+$pagination-item-background-current: $primary-color;
+$pagination-item-color-current: foreground($pagination-item-background-current);
+$pagination-item-color-disabled: $medium-gray;
+$pagination-ellipsis-color: $black;
+$pagination-mobile-items: false;
+$pagination-arrows: true;
+
+// Table
+// ----
+$table-background: $white;
+$table-color-scale: 5%;
+$table-border: 1px solid smart-scale($table-background, $table-color-scale);
+$table-padding: rem-calc(8 10 10);
+$table-hover-scale: 2%;
+$table-row-hover: darken($table-background, $table-hover-scale);
+$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
+$table-striped-background: smart-scale($table-background, $table-color-scale);
+$table-stripe: even;
+$table-head-background: smart-scale($table-background, $table-color-scale / 2);
+$table-foot-background: smart-scale($table-background, $table-color-scale);
+$table-head-font-color: $body-font-color;
+$show-header-for-stacked: false;
+

@@ -1,0 +1,165 @@
+/** CUSTOM **/
+// Design styles - slideshow, content area //
+
+/*/ UNIVERSAL STYLES /*/
+//background: transparent url('../img/ajax-loader.gif') no-repeat center center;
+
+/*/ FOUNDATION FIXES /*/
+// Unfortunately, sometimes a robust framework requires some fixes
+@if $global-flexbox == false {
+	.accordion-menu li[role="menuitem"], .accordion-menu li[role="tab"] {
+		display: block;
+	}
+	.menu a {
+		width: 100%!important;
+		display: inline-block!important;
+		@include breakpoint(medium down) {
+			display: block!important;
+		}
+	}
+	.dropdown.menu.large-horizontal>li.is-dropdown-submenu-parent>a:after {
+		border-color: $dropdown-arrow-color transparent transparent!important;
+	}
+	.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right>a:after {
+		border-color: transparent transparent transparent $dropdown-arrow-color!important;
+	}
+}
+@if $global-flexbox == true {
+	.title-bar {
+		visibility: hidden;
+		justify-content: center;
+		@include breakpoint(medium down) {
+			visibility: visible!important;
+		}
+	}
+	.menu {
+		a {
+			@include disable-mouse-outline;
+		}
+		@include breakpoint(large) {
+			display: flex!important;
+		}
+		@include breakpoint(medium down) {
+			display: block;
+		}
+	}
+	#mainNav {
+		@include breakpoint(medium down) {
+			a {
+				background-color: $body-nav-bg;
+				justify-content: center;
+				font-family: $header-font-family;
+				font-size: 30px;
+				border-top: 1px solid #555;
+				color: $white;
+				&:hover {
+					background-color: scale-color($medium-gray, $lightness: -20%);
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+
+/*/ CONTENT /*/
+// Main content area styles - these are the basics to save time on initial build, but can be deleted/recreated as needed
+#mainContent {
+	position: relative;
+	padding: 0 0;
+	a {
+		@include disable-mouse-outline;
+	}
+	ul {
+		list-style: square;
+		li {
+			list-style-type: square;
+			margin-left: 15px;
+		}
+	}
+	// Interior Pages
+	#contentBox {
+		min-height: 652px;
+		margin-top: 6px;
+		padding: 26px 30px 0 30px;
+		background: $body-content-bg;
+		background-position: center center;
+		background-repeat: repeat;
+		border-top-left-radius: $global-radius;
+		border-top-right-radius: $global-radius;
+		@include breakpoint(medium down) {
+			padding: 20px;
+			margin-top: 0;
+			border-bottom: 0;
+			border-right: 0;
+		}
+		p {
+			font-family: $body-font-family;
+			font-size: 14px;
+		}
+		a {
+			color: $anchor-color;
+			text-decoration: $anchor-text-decoration;
+			&:hover {
+				color: $anchor-color-hover;
+				text-decoration: $anchor-text-decoration-hover;
+			}
+		}
+		blockquote {
+			margin: 0 0 20px;
+			padding: 2px 20px 0 20px;
+			color: scale-color($gray, $lightness: -20%);
+			border-left: 1px solid scale-color($gray, $lightness: 20%);
+			cite {
+				display: block;
+				font-size: 13px;
+				color: scale-color($gray, $lightness: -20%);
+				&::before {
+					content: '\2014 \0020';
+				}
+				a, a:visited {
+					color: scale-color($gray, $lightness: -30%);
+				}
+			}
+			p {
+				color: scale-color($gray, $lightness: -20%);
+			}
+		}
+	}
+}
+
+
+/*/ EXTRA CONTENT STUFF /*/
+
+
+
+/*/ SOCIAL MEDIA ICONS /*/
+#socialMedia {
+	margin-top: 20px;
+	ul {
+		list-style-type: none;
+		margin-bottom: 0;
+		li {
+			display: inline-block;
+			background-color: $secondary-color;
+			width: 54px;
+			height: 54px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			padding-top: 6px;
+			border-radius: 6px;
+			text-align: center;
+			border: 1px solid rgba($secondary-color,.3);
+			transition: box-shadow .1s;
+			&:active, &:focus {
+				box-shadow: -1px 1px 1px -1px rgba($black,.5);
+			}
+			a {
+				color: $white;
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+}
