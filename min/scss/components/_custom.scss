@@ -4,6 +4,15 @@
 /*/ UNIVERSAL STYLES /*/
 //background: transparent url('../img/ajax-loader.gif') no-repeat center center;
 
+.extButtons {
+	&:hover {
+		background-image: linear-gradient(to bottom, scale-color($robin-egg-blue, $lightness: -10%), scale-color($robin-egg-blue, $lightness: -30%));
+	}
+	&:focus,&:active {
+		background-image: linear-gradient(to bottom, scale-color($robin-egg-blue, $lightness: -30%), scale-color($robin-egg-blue, $lightness: -10%));
+	}
+}
+
 /*/ FOUNDATION FIXES /*/
 // Unfortunately, sometimes a robust framework requires some fixes
 @if $global-flexbox == false {
@@ -14,6 +23,10 @@
 		@include breakpoint(medium down) {
 			display: block!important;
 		}
+	}
+	.menu-icon:after:hover {
+		background: scale-color($white, $lightness: -16%);
+		box-shadow: 0 7px 0 scale-color($white, $lightness: -5%), 0 14px 0 scale-color($white, $lightness: -5%);
 	}
 	.menu a {
 		display: inline-block!important;
@@ -55,7 +68,6 @@
 	position: absolute;
 	display: inline-block;
 	padding: 20px;
-	width: 26%;
 	background-color: $white;
 	border-top: 4px solid $robin-egg-blue;
 	text-align: center;
@@ -64,19 +76,44 @@
 	transform: translate(-50%, -50%);
 	border-bottom-right-radius: $global-radius;
 	border-bottom-left-radius: $global-radius;
+	@include breakpoint(medium down) { // this is a bit hacky, but... deadlines!
+		position: relative;
+		left: auto;
+		top: auto;
+		transform: initial;
+		z-index: 99;
+	}
 	.welcomeText {
 		font-size: rem-calc(30);
 		font-weight: normal;
+		@include breakpoint(large down) {
+			font-size: rem-calc(24);
+		}
 	}
 }
 .slideshowShopBtn {
 	position: absolute;
 	display: inline-block;
 	left: 50%;
-	top: 56%;
-	transform: translate(-50%, -56%);
+	top: 100%;
+	transform: translate(-50%, -50%);
 	.button {
+		@include button(false, $robin-egg-blue, scale-color($robin-egg-blue,$lightness:-10%), $white, solid);
 		display: block;
+		margin: 0!important;
+		background-image: linear-gradient(to bottom, $robin-egg-blue, scale-color($robin-egg-blue,$lightness: -20%));
+		@include breakpoint(medium down) {
+			width: 100%;
+		}
+		@extend .extButtons;
+	}
+	@include breakpoint(medium down) {
+		position: relative;
+		width: 100%;
+		left: auto;
+		top: auto;
+		transform: initial;
+		z-index: 99;
 	}
 }
 
@@ -167,7 +204,7 @@
 			position: absolute;
 			display: inline-block;
 			padding: 20px;
-			width: 45%;
+			width: 50%;
 			background-color: $white;
 			border-top: 4px solid;
 			text-align: center;
@@ -232,7 +269,7 @@
 			height: 35px;
 			margin-right: 10px;
 			margin-bottom: 10px;
-			padding-top: 6px;
+			padding-top: 4px;
 			border-radius: 1000px;
 			text-align: center;
 			border: 1px solid rgba($secondary-color,.3);

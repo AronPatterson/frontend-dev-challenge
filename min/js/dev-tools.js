@@ -27,3 +27,17 @@ $(document).ready(function(a) {
 		}, d)
 	})
 });
+
+// this fixes the mega nav issue where it won't close easily on mobile - there's more elegant ways to do this, but the deadline dictates!
+$( '#giantMenu button' ).on( 'click', function() {
+	$( '#giantMenu' ).removeClass( 'is-open' );
+});
+
+// and this (again, inelegant) is a quick fix that allows the menu item to stay colored if you're hovering over the copy
+$( '#giantMenu' ).hover(
+  function() {
+    $( '.menuButton' ).addClass( 'menuActivate' );
+  }, function() {
+    $( '.menuButton' ).removeClass( 'menuActivate' );
+  }
+);

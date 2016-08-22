@@ -121,7 +121,8 @@ h2, h3, h4, h5, h6 {
 
 input[type="submit"] {
 	position: relative;
-	@include button(false, $robin-egg-blue, $robin-egg-blue, $white, solid);
+	@include button(false, $robin-egg-blue, scale-color($robin-egg-blue,$lightness:-10%), $white, solid);
+	background-image: linear-gradient(to bottom, $robin-egg-blue, scale-color($robin-egg-blue, $lightness: -20%));
 	border: 1px solid rgba($robin-egg-blue,.3);
 	transition: border 2s, box-shadow .5s;
 	box-shadow: -4px 4px 5px -4px rgba(0,0,0,.5);
@@ -184,6 +185,18 @@ button {
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
+	input[type="submit"] {
+		@extend .extButtons;
+		margin: 14px 0;
+	}
+	.logoArea {
+		h1 {
+			margin-bottom: 0;
+			img {
+				vertical-align: initial;
+			}
+		}
+	}
 }
 
 /*/ NAV /*/
@@ -198,13 +211,13 @@ button {
 				font-size: 16px;
 				color: $body-font-color;
 				border-bottom: 1px solid $robin-egg-blue;
-				@include breakpoint(large down) {
-					
-				}
 				&:hover {
 					border-bottom: 1px solid transparent;
 					color: scale-color($body-font-color, $lightness: 10%);
 				}
+			}
+			&:hover {
+				background-color: $white;
 			}
 		}
 		@include breakpoint(medium down) {
@@ -220,21 +233,42 @@ button {
 			}
 		}
 	}
+	.menuActivate {
+		background-color: $white;
+	}
 }
+
+
 #searchBar {
-	padding: 0 0 0 18px;
+	padding: 5px 0 0 18px;
+	@include breakpoint(medium down) {
+		padding: 4px 18px 8px 18px;
+	}
 	#inputSearch {
 		position: relative;
 		background: $white;
 		border-radius: $global-radius;
-		margin-top: 6px; /* margin-top + border-width */
+		margin-top: 5px; /* margin-top + border-width */
 		margin-right: 6px; /* border-width */
 		input[type="text"] {
-			margin: 4px 0;
+			margin: 2px 0;
 			background: transparent;
 			height: auto;
 			box-shadow: none;
 			border: 0;
+			width: 88%;
+			@include disable-mouse-outline;
+		}
+		select {
+			width: 12%;
+			height: 2rem;
+			margin: .1rem 0 0;
+			border: 0;
+			float: left;
+			border-right: 1px solid $light-gray;
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+			@include disable-mouse-outline;
 		}
 		button {
 			position: absolute;
@@ -246,12 +280,51 @@ button {
 			padding: 0;
 			border: none;
 			background: transparent;
-			color: #888;
+			color: rgba($black, .5);
 			line-height: 40px;
+			@include disable-mouse-outline;
+			&:hover {
+				color: rgba($black, .3);
+			}
+			.fa-lg {
+				vertical-align: 0;
+			}
 		}
 	}
 }
-
+#giantMenu {
+	.close-button {
+		position: absolute;
+		top: 20px;
+		right: 25px;
+	}
+	.copyBlue {
+		background-color: $robin-egg-blue;
+		font-size: rem-calc(14);
+		border-bottom-right-radius: 0;
+		padding-right: rem-calc(20);
+		text-align: left;
+	}
+	.menu {
+		font-size: rem-calc(14);
+	}
+}
+.dropdown-pane {
+	background-color: $white;
+	width: 100%!important;
+	max-width: $global-width!important;
+	padding: 0 0 0 1rem;
+	@include breakpoint(medium down) {
+		padding: 0;
+	}
+	border: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	.column {
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}
 
 /*/ MODULES /*/
 // this would normally be plugins vital to the layout
@@ -281,20 +354,49 @@ button {
 	}
 }
 
+.footNav {
+	.menu {
+		font-weight: 700;
+		li a {
+			font-size: rem-calc(14);
+		}
+	}
+}
+
 
 // for newsletter submission field in footer
 .newsWrapper {
 	width: 100%;
-	input {
+	margin-bottom: 18px;
+	.emailBox {
+		position: relative;
+		display: inline-block;
+		width: 362px;
+		height: 40px;
+		box-shadow: -1px 0px 4px 0px rgba(0,0,0, 0.75);
+	}
+	input[type="email"] {
 		display: inline-block;
 		width: 280px;
-	}
-	button {
-		display: inline-block;
-		width: 74px;
+		height: 2.54rem;
 		margin: 0;
-		height: rem-calc(9);
-		padding: $fieldset-padding;
+		border: 0;
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+	}
+		//box-shadow: -1px 0px 4px 0px rgba($black, 0.75);
+	button {
+		@extend .extButtons;
+		display: inline-block;
+		position: relative;
+		top: -2px;
+		@include button(false, $robin-egg-blue, scale-color($robin-egg-blue,$lightness:-10%), $white, solid);
+		background-image: linear-gradient(to bottom, $robin-egg-blue, scale-color($robin-egg-blue, $lightness:-20%));
+		margin: 0;
+		padding: .8rem 1rem;
+		line-height: .96;
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
 	}
 
 }

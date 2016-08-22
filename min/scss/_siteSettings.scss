@@ -9,7 +9,7 @@
 @import 'bower_components/foundation-sites/scss/util/util';
 
 // STRUCTURE OPTIONS //
-$aron-box-mode: 1px; // set a 1px border on everything, so you can see the outlines of the elements
+$aron-box-mode: 0px; // set a 1px border on everything, so you can see the outlines of the elements
 $global-flexbox: false;
 
 $global-width: 1280px;
@@ -124,7 +124,7 @@ $stat-font-size: 2.5rem;
 
 // links
 $anchor-color: $body-font-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: 14%);
+$anchor-color-hover: scale-color($anchor-color, $lightness: 25%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 

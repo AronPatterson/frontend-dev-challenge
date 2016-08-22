@@ -17,19 +17,12 @@
 	</script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 	<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-	<style>
-
-	 .dropdown-pane {
-		width: 100%!important;
-		max-width: 1280px!important;
-	}
-	</style>
 </head>
 <body>
 <div id="top">
 <header id="navContainer">
 	<div class="row medium-uncollapse large-collapse relative">
-		<section class="small-12 large-9 columns medium-text-center large-text-left logoArea">
+		<section class="small-12 large-9 columns logoArea">
 			<a href="#"><h1><img src="img/logo.svg" alt="August Ash - Minneapolis, Minnesota"></h1></a>
 		</section>
 		<section class="small-6 large-9 columns">
@@ -41,12 +34,68 @@
 <!-- START: Nav -->
 <div class="row collapse">
 	<nav class="small-18 large-9 columns">
-		<div class="title-bar" data-responsive-toggle="mainNav" data-hide-for="large">
-			<button class="menu-icon" type="button" data-toggle></button>
+		<div class="title-bar text-center" data-responsive-toggle="mainNav" data-hide-for="large">
+			<button class="fa fa-bars fa-lg" type="button" data-toggle></button>
 			<div class="title-bar-title">Navigation</div>
 		</div>
 		<ul id="mainNav" class="menu expanded large-horizontal medium-vertical" data-responsive-menu="accordion large-dropdown medium-accordion">
-			<li data-toggle="giantMenu"><a href="#">Who We Are</a></li>
+			<li data-toggle="giantMenu" class="menuButton"><a href="#">Who We Are</a>
+			<!-- START: Giant Menu -->
+				<div id="giantMenu" data-dropdown data-options="closeOnClick: true; hover: true; hoverPane: true;" class="dropdown-pane" style="z-index:999;">
+					<button class="close-button float-right" aria-label="Close alert" type="button">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="small-18 medium-6 large-4 columns">
+						<ul class="menu vertical">
+							<li><label><strong>Lorem ipsum dolor</strong></label></li>
+							<li><a href="#">Item 1</a></li>
+							<li><a href="#">Item 2</a></li>
+							<li><a href="#">Item 3</a></li>
+							<li><a href="#">Item 4</a></li>
+							<li><a href="#">Item 5</a></li>
+							<li><a href="#">Item 6</a></li>
+							<li><a href="#">Item 7</a></li>
+							<li><a href="#">Item 8</a></li>
+							<li><a href="#">Item 9</a></li>
+							<li><a href="#">Item 10</a></li>
+							<li><a href="#">Item 11</a></li>
+							<li><a href="#">Item 12</a></li>
+						</ul>
+					</div>
+					<div class="small-18 medium-6 large-4 columns">
+						<ul class="menu vertical">
+							<li><label><strong>Section Name</strong></label></li>
+							<li><a href="#">Item 1</a></li>
+							<li><a href="#">Item 2</a></li>
+							<li><a href="#">Item 3</a></li>
+							<li><a href="#">Item 4</a></li>
+							<li><a href="#">Item 5</a></li>
+							<li><a href="#">Item 6</a></li>
+							<li><a href="#">Item 7</a></li>
+						</ul>
+					</div>
+					<div class="small-18 medium-6 large-4 columns">
+						<ul class="menu vertical">
+							<li><label><strong>Section Name</strong></label></li>
+							<li><a href="#">Item 1</a></li>
+							<li><a href="#">Item 2</a></li>
+							<li><a href="#">Item 3</a></li>
+							<li><a href="#">Item 4</a></li>
+							<li><a href="#">Item 5</a></li>
+							<li><a href="#">Item 6</a></li>
+							<li><a href="#">Item 7</a></li>
+							<li><a href="#">Item 8</a></li>
+							<li><a href="#">Item 9</a></li>
+							<li><a href="#">Item 10</a></li>
+						</ul>
+					</div>
+					<div class="show-for-large large-6 columns copyBlue">
+						<p>DIY offal vice cliche celiac try-hard, chambray fingerstache 90's microdosing kitsch austin actually ennui. Mumblecore lumbersexual thundercats stumptown, listicle celiac trust fund flexitarian migas. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun.</p>
+						<p>Wayfarers four loko franzen dreamcatcher, shoreditch flannel cold-pressed blog man bun kogi truffaut selvage. Lo-fi plaid small batch, williamsburg organic portland ramps yr vegan cred +1 fixie 3 wolf moon. Forage tacos iPhone, mlkshk affogato yr kale chips pickled. Lumbersexual small batch austin intelligentsia waistcoat single-origin coffee. Gluten-free banjo waistcoat, shabby chic meggings kogi roof party irony lumbersexual butcher quinoa 8-bit messenger bag keytar. Gluten-free banjo waistcoat, shabby chic meggings kogi roof party irony lumbersexual butcher quinoa 8-bit messenger bag keytar.</p>
+					</div>
+				</div>
+			<!-- END: /Giant Menu -->
+			</li>
 			<li><a href="#">What We Do</a></li>
 			<li><a href="#">Our Work</a></li>
 			<li><a href="#">Our Blog</a></li>
@@ -55,52 +104,14 @@
 	</nav>
 	<div id="searchBar" class="small-18 large-9 columns">
 		<div id="inputSearch">
-			<input type="text" /><button><i class="fa fa-search fa-lg"></i></button>
+			<select><option>All</option></select><input type="text" /><button><i class="fa fa-search fa-lg"></i></button>
 		</div>
 	</div>
 </div> <!-- .row -->
-	<!-- END: /Nav -->
-<div id="giantMenu" data-dropdown data-options="closeOnClick: true; hover: true; hoverPane: true;" class="dropdown-pane" style="z-index:999;">
-	<div class="medium-18 large-4 columns">
-		<ul class="menu vertical">
-			<li><label>Section Name</label></li>
-			<li><a href="#">Dropdown Options</a></li>
-			<li><a href="#">Dropdown Options</a></li>
-			<li><a href="#">Subdropdown Option</a></li>
-			<li><a href="#">Subdropdown Option</a></li>
-			<li><a href="#">Subdropdown Option</a></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li class="divider"></li>
-		</ul>
-	</div>
-	<div class="medium-18 large-4 columns">
-		<ul class="menu vertical">
-			<li><label>Section Name</label></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li class="divider"></li>
-			<li><a href="#">See all ?</a></li>
-		</ul>
-	</div>
-	<div class="medium-18 large-4 columns">
-		<ul class="menu vertical">
-			<li><label>Section Name</label></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li><a href="#">Dropdown Option</a></li>
-			<li class="divider"></li>
-			<li><a href="#">See all ?</a></li>
-		</ul>
-	</div>
-	<div class="show-for-large large-6 columns">
-		<p>DIY offal vice cliche celiac try-hard, chambray fingerstache 90's microdosing kitsch austin actually ennui. Mumblecore lumbersexual thundercats stumptown, listicle celiac trust fund flexitarian migas. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun, tilde man braid bitters lumbersexual microdosing plaid messenger bag. Fanny pack forage selvage marfa put a bird on it, leggings narwhal YOLO. +1 asymmetrical butcher aesthetic. Cardigan ugh 3 wolf moon put a bird on it, thundercats narwhal kombucha fap disrupt kogi chillwave dreamcatcher paleo lumbersexual.</p>
-		<p>Wayfarers four loko franzen dreamcatcher, shoreditch flannel cold-pressed blog man bun kogi truffaut selvage. Lo-fi plaid small batch, williamsburg organic portland ramps yr vegan cred +1 fixie 3 wolf moon. Forage tacos iPhone, mlkshk affogato yr kale chips pickled. Lumbersexual small batch austin intelligentsia waistcoat single-origin coffee. Gluten-free banjo waistcoat, shabby chic meggings kogi roof party irony lumbersexual butcher quinoa 8-bit messenger bag keytar. Williamsburg XOXO heirloom, leggings mumblecore yr banh mi wolf forage try-hard austin pitchfork drinking vinegar. Shabby chic raw denim selfies thundercats master cleanse slow-carb.</p>
-	</div>
-</div>
+<!-- END: /Nav -->
+
 <!-- START: Slideshow -->
-<div id="theSlideshow">
+<div id="theSlideshow" class="relative">
 	<div class="orbit" role="region" aria-label="Slideshow" data-orbit>
 		<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
 		<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
@@ -113,46 +124,46 @@
 			</li>
 		</ul>
 	</div>
-	<div class="slideshowTitle">
+	<div class="slideshowTitle medium-18 large-6 column">
 		<span class="welcomeText">Welcome to our website.</span>
-	</div>
-	<div class="slideshowShopBtn">
-		<span class="button">Shop Now</span>
+		<div class="slideshowShopBtn">
+			<span class="button">Shop Now</span>
+		</div>
 	</div>
 </div>
 <!-- END: /Slideshow -->
 <!-- START: Main Content -->
 <div id="mainContent">
 	<div id="contentBox" class="row" role="main">
-	<div id="ctaLarge" class="row ctaBox"></div>
-	<div id="ctaSmall" class="row small-centered ctaBox"></div>
-	<script id="ctaLargeTemplate" type="text/x-handlebars-template">
-		{{#callouts}}
-			{{#if buttonLabel}}
-			<div class="small-18 medium-9 column">
-				<a href="#">
-					<img src="{{imagePath}}" alt="{{title}}" />
-					<div class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</div>
-					<div class="ctaLabel {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{buttonLabel}}</div>
-				</a>
-				{{!-- the above pulls in a color as the class 'colorCTA'; if there's no color, it defaults to greenCTA --}}
-			</div>
-			{{/if}}
-		{{/callouts}}
-	</script>
-	<script id="ctaSmallTemplate" type="text/x-handlebars-template">
-		{{!-- this pulls all that don't have a buttonLabel, which neatly works out to our last 3... this is totally a cheat, alas, project reqs!!! --}}
-		{{#callouts}}
-			{{#unless buttonLabel}}
-			<a href="#">
-				<div class="small-18 medium-6 column">
-					<img src="{{imagePath}}" alt="{{title}}" />
-					<div class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</div>
+		<div id="ctaLarge" class="row ctaBox"></div>
+		<div id="ctaSmall" class="row small-centered ctaBox"></div>
+		<script id="ctaLargeTemplate" type="text/x-handlebars-template">
+			{{#callouts}}
+				{{#if buttonLabel}}
+				<div class="small-18 medium-9 column">
+					<a href="#">
+						<img src="{{imagePath}}" alt="{{title}}" />
+						<h2 class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</h2>
+						<div class="ctaLabel {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{buttonLabel}}</div>
+					</a>
+					{{!-- the above pulls in a color as the class 'colorCTA'; if there's no color, it defaults to greenCTA --}}
 				</div>
-			</a>
-			{{/unless}}
-		{{/callouts}}
-	</script>
+				{{/if}}
+			{{/callouts}}
+		</script>
+		<script id="ctaSmallTemplate" type="text/x-handlebars-template">
+			{{!-- this pulls all that don't have a buttonLabel, which neatly works out to our last 3... this is totally a cheat, alas, project reqs!!! --}}
+			{{#callouts}}
+				{{#unless buttonLabel}}
+				<a href="#">
+					<div class="small-18 medium-6 column">
+						<img src="{{imagePath}}" alt="{{title}}" />
+						<h3 class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</h3>
+					</div>
+				</a>
+				{{/unless}}
+			{{/callouts}}
+		</script>
 	</div>
 </div>
 <!-- END: /Main Content -->
@@ -164,8 +175,9 @@
 				<h3>Join Our Newsletter</h3>
 				<p>Sign Up for our monthly newsletter that has helpful tips.</p>
 				<div class="newsWrapper">
-					<input type="email" placeholder="Enter Email Address" />
-					<button class="button">Sign Up</button>
+					<div class="emailBox">
+						<input type="email" placeholder="Enter Email Address" /><button class="button">Sign Up</button>
+					</div>
 				</div>
 				<ul>
 					<li class="fbLogo"><a href="#"><span class="fa fa-facebook"></span></a></li>
