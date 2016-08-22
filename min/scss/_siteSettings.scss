@@ -124,7 +124,7 @@ $stat-font-size: 2.5rem;
 
 // links
 $anchor-color: $body-font-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: 25%);
+$anchor-color-hover: $secondary-color;
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 

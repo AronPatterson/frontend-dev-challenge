@@ -121,9 +121,9 @@ h2, h3, h4, h5, h6 {
 
 input[type="submit"] {
 	position: relative;
-	@include button(false, $robin-egg-blue, scale-color($robin-egg-blue,$lightness:-10%), $white, solid);
-	background-image: linear-gradient(to bottom, $robin-egg-blue, scale-color($robin-egg-blue, $lightness: -20%));
-	border: 1px solid rgba($robin-egg-blue,.3);
+	@include button(false, $secondary-color, scale-color($secondary-color,$lightness:-10%), $white, solid);
+	background-image: linear-gradient(to bottom, $secondary-color, scale-color($secondary-color, $lightness: -20%));
+	border: 1px solid rgba($secondary-color,.3);
 	transition: border 2s, box-shadow .5s;
 	box-shadow: -4px 4px 5px -4px rgba(0,0,0,.5);
 	&:active {
@@ -179,7 +179,7 @@ button {
 
 
 /*/ HEADER /*/
-#navContainer {
+#hdrContainer {
 	background: $body-nav-bg;
 	display: block;
 	position: relative;
@@ -195,22 +195,28 @@ button {
 			img {
 				vertical-align: initial;
 			}
+			@include breakpoint(medium down) {
+				padding-top: 10px;
+			}
 		}
 	}
 }
 
 /*/ NAV /*/
+#navContainer {
+	margin-bottom: 1px; // this inexplicably fixes the 1px gap issue...
+}
 #mainNav {
 	text-align: center;
-	li {
+	> li {
 		@include breakpoint(large) {
 			height: 54px;
-			a {
+			> a {
 				padding: 0;
 				font-family: $header-font-family;
 				font-size: 16px;
 				color: $body-font-color;
-				border-bottom: 1px solid $robin-egg-blue;
+				border-bottom: 1px solid $secondary-color;
 				&:hover {
 					border-bottom: 1px solid transparent;
 					color: scale-color($body-font-color, $lightness: 10%);
@@ -223,7 +229,6 @@ button {
 		@include breakpoint(medium down) {
 			a {
 				background-color: $body-nav-bg;
-				justify-content: center;
 				font-family: $header-font-family;
 				border-top: 1px solid #555;
 				&:hover {
@@ -235,6 +240,9 @@ button {
 	}
 	.menuActivate {
 		background-color: $white;
+		a {
+			border-bottom: 0px!important;
+		}
 	}
 }
 
@@ -292,16 +300,19 @@ button {
 		}
 	}
 }
+
+// these are our Mega Menu overwrites, to help replicate the behavior of a mega menu inside of Foundation's default nav
 #giantMenu {
+	overflow: hidden;
 	.close-button {
 		position: absolute;
 		top: 20px;
 		right: 25px;
 	}
 	.copyBlue {
-		background-color: $robin-egg-blue;
+		background-color: $secondary-color;
 		font-size: rem-calc(14);
-		border-bottom-right-radius: 0;
+		border-bottom-right-radius: $global-radius;
 		padding-right: rem-calc(20);
 		text-align: left;
 	}
@@ -317,7 +328,8 @@ button {
 	@include breakpoint(medium down) {
 		padding: 0;
 	}
-	border: 0;
+	border: 1px solid $white;
+	border-top: 0px;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 	.column {
@@ -334,13 +346,15 @@ button {
 #siteFooter {
 	display: block;
 	position: relative;
-	z-index: 1;
 	width: 100%;
 	padding-top: 3%;
 	font-size: 16px;
 	font-family: $header-font-family;
 	color: $white;
 	background: $body-footer-bg;
+	hr {
+		border-bottom: 1px solid rgba($white,.2);
+	}
 	p {
 		font-family: $body-font-family;
 		font-size: 16px;
@@ -390,8 +404,8 @@ button {
 		display: inline-block;
 		position: relative;
 		top: -2px;
-		@include button(false, $robin-egg-blue, scale-color($robin-egg-blue,$lightness:-10%), $white, solid);
-		background-image: linear-gradient(to bottom, $robin-egg-blue, scale-color($robin-egg-blue, $lightness:-20%));
+		@include button(false, $secondary-color, scale-color($secondary-color,$lightness:-10%), $white, solid);
+		background-image: linear-gradient(to bottom, $secondary-color, scale-color($secondary-color, $lightness:-20%));
 		margin: 0;
 		padding: .8rem 1rem;
 		line-height: .96;
@@ -400,7 +414,6 @@ button {
 	}
 
 }
-
 
 // Back to Top
 .backToTopBtn {
@@ -415,7 +428,7 @@ button {
 	font-family: 'FontAwesome';
 	font-size: 18px;
 	opacity: 0;
-	color: $white;
+	color: $secondary-color;
 	background: rgba($primary-color, .8) center 50%;
 	box-shadow: 0 0 10px rgba(#000, .05);
 	transition: opacity .3s 0s, visibility 0s .3s;

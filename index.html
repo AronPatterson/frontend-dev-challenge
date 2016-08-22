@@ -20,8 +20,8 @@
 </head>
 <body>
 <div id="top">
-<header id="navContainer">
-	<div class="row medium-uncollapse large-collapse relative">
+<header id="hdrContainer">
+	<div class="row relative">
 		<section class="small-12 large-9 columns logoArea">
 			<a href="#"><h1><img src="img/logo.svg" alt="August Ash - Minneapolis, Minnesota"></h1></a>
 		</section>
@@ -33,7 +33,7 @@
 </header>
 <!-- START: Nav -->
 <div class="row collapse">
-	<nav class="small-18 large-9 columns">
+	<nav id="navContainer" class="small-18 large-9 columns">
 		<div class="title-bar text-center" data-responsive-toggle="mainNav" data-hide-for="large">
 			<button class="fa fa-bars fa-lg" type="button" data-toggle></button>
 			<div class="title-bar-title">Navigation</div>
@@ -45,8 +45,8 @@
 					<button class="close-button float-right" aria-label="Close alert" type="button">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<div class="small-18 medium-6 large-4 columns">
-						<ul class="menu vertical">
+					<div class="small-18 medium-6 large-4 columns text-left">
+						<ul class="menu vertical"
 							<li><label><strong>Lorem ipsum dolor</strong></label></li>
 							<li><a href="#">Item 1</a></li>
 							<li><a href="#">Item 2</a></li>
@@ -62,8 +62,8 @@
 							<li><a href="#">Item 12</a></li>
 						</ul>
 					</div>
-					<div class="small-18 medium-6 large-4 columns">
-						<ul class="menu vertical">
+					<div class="small-18 medium-6 large-4 columns text-left">
+						<ul class="menu vertical"
 							<li><label><strong>Section Name</strong></label></li>
 							<li><a href="#">Item 1</a></li>
 							<li><a href="#">Item 2</a></li>
@@ -74,8 +74,8 @@
 							<li><a href="#">Item 7</a></li>
 						</ul>
 					</div>
-					<div class="small-18 medium-6 large-4 columns">
-						<ul class="menu vertical">
+					<div class="small-18 medium-6 large-4 columns text-left">
+						<ul class="menu vertical"
 							<li><label><strong>Section Name</strong></label></li>
 							<li><a href="#">Item 1</a></li>
 							<li><a href="#">Item 2</a></li>
@@ -89,7 +89,7 @@
 							<li><a href="#">Item 10</a></li>
 						</ul>
 					</div>
-					<div class="show-for-large large-6 columns copyBlue">
+					<div class="show-for-large large-6 columns copyBlue"
 						<p>DIY offal vice cliche celiac try-hard, chambray fingerstache 90's microdosing kitsch austin actually ennui. Mumblecore lumbersexual thundercats stumptown, listicle celiac trust fund flexitarian migas. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun. Chambray cronut drinking vinegar +1 mustache godard, gluten-free you probably haven't heard of them shabby chic. Lo-fi photo booth man bun.</p>
 						<p>Wayfarers four loko franzen dreamcatcher, shoreditch flannel cold-pressed blog man bun kogi truffaut selvage. Lo-fi plaid small batch, williamsburg organic portland ramps yr vegan cred +1 fixie 3 wolf moon. Forage tacos iPhone, mlkshk affogato yr kale chips pickled. Lumbersexual small batch austin intelligentsia waistcoat single-origin coffee. Gluten-free banjo waistcoat, shabby chic meggings kogi roof party irony lumbersexual butcher quinoa 8-bit messenger bag keytar. Gluten-free banjo waistcoat, shabby chic meggings kogi roof party irony lumbersexual butcher quinoa 8-bit messenger bag keytar.</p>
 					</div>
@@ -155,12 +155,13 @@
 			{{!-- this pulls all that don't have a buttonLabel, which neatly works out to our last 3... this is totally a cheat, alas, project reqs!!! --}}
 			{{#callouts}}
 				{{#unless buttonLabel}}
-				<a href="#">
-					<div class="small-18 medium-6 column">
-						<img src="{{imagePath}}" alt="{{title}}" />
-						<h3 class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</h3>
-					</div>
-				</a>
+				<div class="small-18 medium-6 column">
+						<a href="#">
+							<img src="{{imagePath}}" alt="{{title}}" />
+							<h3 class="ctaTitle {{#if color}}{{color}}{{else}}green{{/if}}CTA">{{title}}</h3>
+							<div class="whiteBorders"></div>
+						</a>
+				</div>
 				{{/unless}}
 			{{/callouts}}
 		</script>
@@ -169,9 +170,9 @@
 <!-- END: /Main Content -->
 <!-- START: Site Footer -->
 <footer id="siteFooter">
-	<div class="row medium-uncollapse large-collapse" role="navigation">
+	<div class="row" role="navigation">
 		<div class="small-18 large-8 columns">
-			<section id="socialMedia" class="medium-text-center large-text-left noPrint">
+			<section id="socialMedia" class="text-center large-text-left noPrint">
 				<h3>Join Our Newsletter</h3>
 				<p>Sign Up for our monthly newsletter that has helpful tips.</p>
 				<div class="newsWrapper">
@@ -179,7 +180,7 @@
 						<input type="email" placeholder="Enter Email Address" /><button class="button">Sign Up</button>
 					</div>
 				</div>
-				<ul>
+				<ul class="large-text-left">
 					<li class="fbLogo"><a href="#"><span class="fa fa-facebook"></span></a></li>
 					<li class="twLogo"><a href="#"><span class="fa fa-twitter"></span></a></li>
 					<li class="igLogo"><a href="#"><span class="fa fa-instagram"></span></a></li>
@@ -187,8 +188,8 @@
 				</ul>
 			</section>
 		</div>
-		<div class="small-18 large-8 columns footNav noPrint" role="navigation">
-			<div class="small-18 large-6 columns">
+		<div class="small-18 large-8 columns footNav noPrint text-center" role="navigation">
+			<div class="small-18 medium-6 columns large-text-left">
 				<ul class="menu vertical">
 					<li><a href="#">Who We Are</a></li>
 					<li><a href="#">What We Do</a></li>
@@ -197,14 +198,14 @@
 					<li><a href="#">Careers</a></li>
 				</ul>
 			</div>
-			<div class="small-18 large-6 columns">
+			<div class="small-18 medium-6 columns large-text-left">
 				<ul class="menu vertical">
 					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Off-hour Support</a></li>
 					<li><a href="#">Submit Project</a></li>
 				</ul>
 			</div>
-			<div class="small-18 large-6 columns">
+			<div class="small-18 medium-6 columns large-text-left">
 				<ul class="menu vertical">
 					<li><a href="#">Helpful Links</a></li>
 					<li><a href="#">Sitemap</a></li>
@@ -225,6 +226,7 @@
 </footer>
 <!-- END: /Site Footer -->
 </div>
+<a href="top" class="backToTopBtn bttVisible" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
 var theData = {
