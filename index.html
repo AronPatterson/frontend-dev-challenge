@@ -217,9 +217,9 @@
 	<hr />
 		<div class="small-18 text-center">
 			<p class="text-center">
-				<a href="tel:9528519400">952-951-9400</a><br />
+				<a class="phoneNum" href="tel:9528519400">952-951-9400</a><br />
 				2626 East 82nd Street, Suit 320 Bloomington, MN 55425<br />
-				&copy; 2016 August Ash
+				<small>&copy; 2016 August Ash</small>
 			</p>
 		</div>
 	</div> <!-- .row -->
@@ -229,6 +229,7 @@
 <a href="top" class="backToTopBtn bttVisible" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
+// this was embedded so I could operate the file locally without getting CORS errors in Chrome... I should've used localhost, in retrospect
 var theData = {
   "callouts": [
     {

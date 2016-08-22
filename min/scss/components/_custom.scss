@@ -1,10 +1,8 @@
 /** CUSTOM **/
-// Design styles - slideshow, content area //
+// Design styles - slideshow, content area, CTAs, social media icons //
 
 /*/ UNIVERSAL STYLES /*/
-//background: transparent url('../img/ajax-loader.gif') no-repeat center center;
-
-.extButtons {
+.extButtons { // SASS extend for hovering over gradients
 	&:hover {
 		background-image: linear-gradient(to bottom, scale-color($secondary-color, $lightness: -10%), scale-color($secondary-color, $lightness: -30%));
 	}
@@ -64,6 +62,9 @@
 
 
 /*/ SLIDESHOW /*/
+#theSlideshow {
+	background: transparent url('img/ajax-loader.gif') no-repeat 50% 70%;
+}
 .slideshowTitle {
 	position: absolute;
 	display: inline-block;
@@ -91,6 +92,7 @@
 		}
 	}
 }
+// Shop Now button
 .slideshowShopBtn {
 	position: absolute;
 	display: inline-block;
@@ -116,6 +118,14 @@
 		z-index: 99;
 	}
 }
+// Orbit overwrites
+.orbit-next, .orbit-previous {
+	background: rgba(0,0,0,.6);
+	color: $secondary-color;
+	&:hover {
+		background: rgba($black,.1);
+	}
+}
 
 /*/ CONTENT /*/
 // Main content area styles - these are the basics to save time on initial build, but can be deleted/recreated as needed
@@ -132,7 +142,7 @@
 			margin-left: 15px;
 		}
 	}
-	// Interior Pages
+	// Interior Page
 	#contentBox {
 		min-height: 450px;
 		margin-top: 6px;
@@ -201,6 +211,7 @@
 			width: 100%;
 			height: 100%;
 			transition: transform 1.5s ease-in-out;
+			background: transparent url('img/ajax-loader.gif') no-repeat 50% 50%;
 		}
 		&:hover img { // scale up the image for a cool zoom-in effect when you hover the CTA box itself, with the hidden overflow making sure it doesn't blow up too big
 			transform: scale(1.25);
@@ -273,6 +284,11 @@
 	}
 }
 
+.phoneNum {
+	font-size: rem-calc(18);
+	color: $white;
+}
+
 
 /*/ SOCIAL MEDIA ICONS /*/
 #socialMedia {
@@ -296,12 +312,21 @@
 			text-align: center;
 			border: 1px solid rgba($secondary-color,.3);
 			transition: box-shadow .1s;
+			color: $white;
 			&:active, &:focus {
 				box-shadow: -1px 1px 1px -1px rgba($black,.5);
 			}
 			&:hover {
 				background-color: $white;
-				color: $secondary-color;
+			}
+			a {
+				color: $white;
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				&:hover {
+					color: $robin-egg-blue!important;
+				}
 			}
 		}
 	}

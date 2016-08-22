@@ -211,19 +211,23 @@ button {
 	> li {
 		@include breakpoint(large) {
 			height: 54px;
+			border-right: 1px solid #dadada;
 			> a {
-				padding: 0;
+				padding: 0 0 3px 0;
 				font-family: $header-font-family;
+				font-weight: 700;
 				font-size: 16px;
 				color: $body-font-color;
 				border-bottom: 1px solid $secondary-color;
 				&:hover {
-					border-bottom: 1px solid transparent;
 					color: scale-color($body-font-color, $lightness: 10%);
 				}
 			}
 			&:hover {
 				background-color: $white;
+				> a { // I know this looks like nesting madness, BUT, it lets the border bottom be controlled by hovering the li rather than the link
+					border-bottom: 1px solid transparent;
+				}
 			}
 		}
 		@include breakpoint(medium down) {
@@ -238,15 +242,14 @@ button {
 			}
 		}
 	}
-	.menuActivate {
+	.menuActivate { // this is a class given to a dropdown menu via jQuery, to ensure it stays open if they're hovering giantMenu
 		background-color: $white;
 		a {
 			border-bottom: 0px!important;
 		}
 	}
 }
-
-
+// our search bar styling
 #searchBar {
 	padding: 5px 0 0 18px;
 	@include breakpoint(medium down) {
@@ -302,6 +305,7 @@ button {
 }
 
 // these are our Mega Menu overwrites, to help replicate the behavior of a mega menu inside of Foundation's default nav
+// warning: prepare to see some hacks...
 #giantMenu {
 	overflow: hidden;
 	.close-button {
@@ -311,16 +315,17 @@ button {
 	}
 	.copyBlue {
 		background-color: $secondary-color;
-		font-size: rem-calc(14);
 		border-bottom-right-radius: $global-radius;
-		padding-right: rem-calc(20);
+		padding: 2rem;
 		text-align: left;
+		font-size: rem-calc(14);
+		color: $white;
 	}
 	.menu {
 		font-size: rem-calc(14);
 	}
 }
-.dropdown-pane {
+.dropdown-pane { // this overwrites the Foundation default so we can get it full width; I'm keeping it 'dropdown-pane' in order to make that distinction
 	background-color: $white;
 	width: 100%!important;
 	max-width: $global-width!important;
@@ -360,12 +365,6 @@ button {
 		font-size: 16px;
 		font-color: $white;
 	}
-	a {
-		color: $white;
-		&:hover {
-			color: scale-color($white, $lightness: -20%);
-		}
-	}
 }
 
 .footNav {
@@ -373,6 +372,12 @@ button {
 		font-weight: 700;
 		li a {
 			font-size: rem-calc(14);
+		}
+	}
+	a {
+		color: $white;
+		&:hover {
+			color: scale-color($white, $lightness: -20%);
 		}
 	}
 }
@@ -416,6 +421,7 @@ button {
 }
 
 // Back to Top
+// nifty little feature that activates if a page ends up being too long - accessibility 4tw
 .backToTopBtn {
 	display: inline-block;
 	visibility: hidden;
